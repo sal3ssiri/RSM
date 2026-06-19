@@ -5,6 +5,8 @@ import {
   FileText
 } from "lucide-react";
 
+import "../assets/dashboard.css";
+
 export default function Dashboard() {
 
   const stats = [
