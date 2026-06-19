@@ -1,29 +1,35 @@
-import Header
-  from "../components/Header.jsx";
-
 import Sidebar
-  from "../components/Sidebar.jsx";
+from "../components/Sidebar.jsx";
+
+import Header
+from "../components/Header.jsx";
 
 export default function MainLayout(
-  { children }
+{ children }
 ) {
 
-  return (
+return (
 
-    <div>
 
-      <Sidebar />
+<div className="app-layout">
 
-      <div>
+  <Sidebar />
 
-        <Header />
+  <div className="main-content">
 
-        {children}
+    <Header />
 
-      </div>
+    <main>
 
-    </div>
+      {children}
 
-  );
+    </main>
+
+  </div>
+
+</div>
+
+
+);
 
 }
