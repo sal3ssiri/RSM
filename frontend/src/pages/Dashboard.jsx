@@ -44,40 +44,51 @@ export default function Dashboard() {
 
       <div className="stats-grid">
 
-        {stats.map((item) => {
+        {
 
-          const Icon = item.icon;
+          stats.map(
+            (item) => {
 
-          return (
+              const Icon =
+                item.icon;
 
-            <div
-              key={item.title}
-              className="stat-card"
-            >
+              return (
 
-              <div>
+                <div
+                  key={item.title}
+                  className="stat-card"
+                >
 
-                <h3>
-                  {item.title}
-                </h3>
+                  <div>
 
-                <h2>
-                  {item.value}
-                </h2>
+                    <div className="stat-title">
 
-              </div>
+                      {item.title}
 
-              <div className="stat-icon">
+                    </div>
 
-                <Icon size={34} />
+                    <div className="stat-value">
 
-              </div>
+                      {item.value}
 
-            </div>
+                    </div>
 
-          );
+                  </div>
 
-        })}
+                  <div className="stat-icon">
+
+                    <Icon size={30} />
+
+                  </div>
+
+                </div>
+
+              );
+
+            }
+          )
+
+        }
 
       </div>
 
@@ -86,11 +97,15 @@ export default function Dashboard() {
         <div className="dashboard-card">
 
           <h3>
+
             أحدث العقود
+
           </h3>
 
           <p>
+
             لا توجد بيانات حالياً
+
           </p>
 
         </div>
@@ -98,11 +113,15 @@ export default function Dashboard() {
         <div className="dashboard-card">
 
           <h3>
+
             الدفعات المستحقة
+
           </h3>
 
           <p>
+
             لا توجد بيانات حالياً
+
           </p>
 
         </div>
@@ -110,11 +129,15 @@ export default function Dashboard() {
         <div className="dashboard-card">
 
           <h3>
+
             طلبات الصيانة
+
           </h3>
 
           <p>
+
             لا توجد بيانات حالياً
+
           </p>
 
         </div>
