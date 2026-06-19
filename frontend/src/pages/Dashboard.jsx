@@ -3,7 +3,8 @@ import {
   Home,
   Users,
   FileText
-} from "lucide-react";
+}
+from "lucide-react";
 
 import "../assets/dashboard.css";
 
@@ -39,7 +40,6 @@ export default function Dashboard() {
 
   return (
 
-    
     <div className="dashboard">
 
       <div className="stats-grid">
@@ -55,12 +55,6 @@ export default function Dashboard() {
               className="stat-card"
             >
 
-              <div className="stat-icon">
-
-                <Icon size={28} />
-
-              </div>
-
               <div>
 
                 <h3>
@@ -70,6 +64,12 @@ export default function Dashboard() {
                 <h2>
                   {item.value}
                 </h2>
+
+              </div>
+
+              <div className="stat-icon">
+
+                <Icon size={34} />
 
               </div>
 
