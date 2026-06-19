@@ -344,6 +344,10 @@ export default function Properties() {
   onClose={() =>
     setDrawerOpen(false)
   }
+  propertyTypes={propertyTypes}
+  cities={cities}
+  statuses={statuses}
+  onSaved={loadPage}
 />
 
     </div>
