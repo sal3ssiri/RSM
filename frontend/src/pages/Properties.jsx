@@ -5,6 +5,8 @@ import {
 }
 from "react";
 
+import "../assets/properties.css";
+
 import PropertyStats
 from "../components/properties/PropertyStats.jsx";
 
