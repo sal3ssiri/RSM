@@ -7,11 +7,9 @@ import {
 }
 from "lucide-react";
 
-export default function PropertyCards(
-  {
-    properties
-  }
-) {
+export default function PropertyCards({
+  properties
+}) {
 
   if (
     !properties ||
@@ -40,19 +38,15 @@ export default function PropertyCards(
           property => {
 
             const isActive =
-              property.Status ===
-              "نشط";
+              property.Status === "نشط";
 
             const isUnits =
-              property.RentalMode ===
-              "تأجير وحدات";
+              property.RentalMode === "تأجير وحدات";
 
             return (
 
               <div
-                key={
-                  property.PropertyID
-                }
+                key={property.PropertyID}
                 className="property-card"
               >
 
@@ -62,17 +56,13 @@ export default function PropertyCards(
 
                     <div className="property-name">
 
-                      {
-                        property.PropertyName
-                      }
+                      {property.PropertyName}
 
                     </div>
 
                     <div className="property-id">
 
-                      {
-                        property.PropertyID
-                      }
+                      {property.PropertyID}
 
                     </div>
 
@@ -86,9 +76,7 @@ export default function PropertyCards(
                     }
                   >
 
-                    {
-                      property.Status
-                    }
+                    {property.Status}
 
                   </span>
 
@@ -102,37 +90,35 @@ export default function PropertyCards(
 
                     {property.City}
 
-                    {property.District
-                      ? ` • ${property.District}`
-                      : ""}
+                    {
+                      property.District
+                        ? ` • ${property.District}`
+                        : ""
+                    }
 
                   </span>
 
                 </div>
 
-                <div className="badges">
+                <div className="property-badges">
 
                   <span
-                    className="property-badge badge-type"
+                    className="property-badge property-badge-type"
                   >
 
-                    {
-                      property.PropertyType
-                    }
+                    {property.PropertyType}
 
                   </span>
 
                   <span
                     className={
                       isUnits
-                        ? "property-badge badge-rental units"
-                        : "property-badge badge-rental"
+                        ? "property-badge property-badge-rental units"
+                        : "property-badge property-badge-rental"
                     }
                   >
 
-                    {
-                      property.RentalMode
-                    }
+                    {property.RentalMode}
 
                   </span>
 
@@ -150,9 +136,7 @@ export default function PropertyCards(
 
                     <div className="metric-value">
 
-                      {
-                        property.PlannedUnitsCount || 0
-                      }
+                      {property.PlannedUnitsCount || 0}
 
                     </div>
 
@@ -168,9 +152,7 @@ export default function PropertyCards(
 
                     <div className="metric-value">
 
-                      {
-                        property.FloorsCount || 0
-                      }
+                      {property.FloorsCount || 0}
 
                     </div>
 
@@ -241,4 +223,3 @@ export default function PropertyCards(
   );
 
 }
-
