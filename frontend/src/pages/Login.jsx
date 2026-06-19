@@ -41,9 +41,23 @@ export default function Login() {
     const loginResult =
       await login(email);
 
-    console.log(
-      loginResult
-    );
+    if (loginResult.success) {
+
+  localStorage.setItem(
+    "token",
+    loginResult.token
+  );
+
+  localStorage.setItem(
+    "user",
+    JSON.stringify(
+      loginResult.user
+    )
+  );
+
+  window.location.reload();
+
+}
 
   }
 
