@@ -4,10 +4,13 @@
   box-sizing: border-box;
   }
 
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+
 body {
-font-family: Inter, Arial, sans-serif;
-background: #f8fafc;
-color: #0f172a;
+  font-family: 'Tajawal', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  direction: rtl;
 }
 
 .app-layout {
@@ -107,7 +110,7 @@ gap: 10px;
 }
 
 main {
-padding: 24px;
+  padding: 32px;
 }
 
 .page-card {
