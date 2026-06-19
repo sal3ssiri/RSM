@@ -8,7 +8,7 @@ import {
   Wrench,
   UserCog,
   Settings,
-  Landmark
+  Building
 }
 from "lucide-react";
 
@@ -25,7 +25,7 @@ export default function Sidebar() {
 
       <div className="sidebar-logo">
 
-        <Landmark
+        <Building
           size={56}
           strokeWidth={1.8}
         />
@@ -34,85 +34,94 @@ export default function Sidebar() {
 
       <nav className="sidebar-menu">
 
-        <NavLink
-          to="/"
-        >
+        <NavLink to="/">
+
           <LayoutDashboard size={20} />
+
           <span>
             لوحة التحكم
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/properties"
-        >
+        <NavLink to="/properties">
+
           <Building2 size={20} />
+
           <span>
             العقارات
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/units"
-        >
+        <NavLink to="/units">
+
           <Home size={20} />
+
           <span>
             الوحدات
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/tenants"
-        >
+        <NavLink to="/tenants">
+
           <Users size={20} />
+
           <span>
             المستأجرون
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/contracts"
-        >
+        <NavLink to="/contracts">
+
           <FileText size={20} />
+
           <span>
             العقود
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/payments"
-        >
+        <NavLink to="/payments">
+
           <Wallet size={20} />
+
           <span>
             المدفوعات
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/maintenance"
-        >
+        <NavLink to="/maintenance">
+
           <Wrench size={20} />
+
           <span>
             الصيانة
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/users"
-        >
+        <NavLink to="/users">
+
           <UserCog size={20} />
+
           <span>
             المستخدمون
           </span>
+
         </NavLink>
 
-        <NavLink
-          to="/settings"
-        >
+        <NavLink to="/settings">
+
           <Settings size={20} />
+
           <span>
             الإعدادات
           </span>
+
         </NavLink>
 
       </nav>
