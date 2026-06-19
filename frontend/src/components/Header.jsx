@@ -10,20 +10,12 @@ export default function Header() {
 
   const user =
     JSON.parse(
-      localStorage.getItem(
-        "user"
-      )
+      localStorage.getItem("user")
     );
 
-  function handleLogout() {
+  function logout() {
 
-    localStorage.removeItem(
-      "user"
-    );
-
-    localStorage.removeItem(
-      "token"
-    );
+    localStorage.clear();
 
     window.location.reload();
 
@@ -33,54 +25,51 @@ export default function Header() {
 
     <header className="header">
 
+      <div className="header-actions">
+
+        <button
+          className="icon-btn"
+          onClick={logout}
+        >
+          <LogOut size={20} />
+        </button>
+
+        <button className="icon-btn">
+          <Settings size={20} />
+        </button>
+
+        <button
+          className="icon-btn notification-btn"
+        >
+          <Bell size={20} />
+
+          <span className="badge">
+            3
+          </span>
+
+        </button>
+
+      </div>
+
       <div className="header-title">
 
         نظام إدارة العقارات
 
       </div>
 
-      <div className="header-actions">
+      <div className="user-info">
 
-        <button className="icon-button">
+        <UserCircle size={48} />
 
-          <Bell size={20} />
+        <div>
 
-          <span className="notification-badge">
-            3
-          </span>
-
-        </button>
-
-        <button className="icon-button">
-
-          <Settings size={20} />
-
-        </button>
-
-        <button
-          className="icon-button logout-btn"
-          onClick={handleLogout}
-        >
-
-          <LogOut size={20} />
-
-        </button>
-
-        <div className="user-info">
-
-          <div>
-
-            <div className="user-name">
-              {user?.name}
-            </div>
-
-            <div className="user-role">
-              {user?.role}
-            </div>
-
+          <div className="user-name">
+            {user?.name}
           </div>
 
-          <UserCircle size={42} />
+          <div className="user-role">
+            {user?.role}
+          </div>
 
         </div>
 
