@@ -42,18 +42,6 @@ export default function Dashboard() {
     
     <div className="dashboard">
 
-      <div className="page-header">
-
-        <h1>
-          لوحة التحكم
-        </h1>
-
-        <p>
-          نظرة عامة على نظام إدارة العقارات
-        </p>
-
-      </div>
-
       <div className="stats-grid">
 
         {stats.map((item) => {
