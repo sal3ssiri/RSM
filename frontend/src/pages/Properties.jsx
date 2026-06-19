@@ -350,9 +350,6 @@ export default function Properties() {
   onSaved={loadPage}
         
 />
-console.log("propertyTypes", propertyTypes);
-console.log("cities", cities);
-console.log("statuses", statuses);
     </div>
 
   );
