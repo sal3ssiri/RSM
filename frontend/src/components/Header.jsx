@@ -1,64 +1,60 @@
 import {
-Bell,
-UserCircle
+  Bell,
+  UserCircle
 }
 from "lucide-react";
 
 export default function Header() {
 
-const user =
-JSON.parse(
-localStorage.getItem(
-"user"
-)
-);
+  const user =
+    JSON.parse(
+      localStorage.getItem(
+        "user"
+      )
+    );
 
-return (
+  return (
 
+    <header className="header">
 
-<header className="header">
+      <div className="header-right">
 
-  <div className="header-title">
-
-    Real Estate Management System
-
-  </div>
-
-  <div className="header-actions">
-
-    <button
-      className="icon-button"
-    >
-
-      <Bell size={20} />
-
-    </button>
-
-    <div className="user-info">
-
-      <UserCircle
-        size={32}
-      />
-
-      <div>
-
-        <div>
-          {user?.name}
-        </div>
-
-        <small>
-          {user?.role}
-        </small>
+        <h1>
+          نظام إدارة العقارات
+        </h1>
 
       </div>
 
-    </div>
+      <div className="header-left">
 
-  </div>
+        <button
+          className="notification-btn"
+        >
+          <Bell size={22} />
+        </button>
 
-</header>
+        <div className="user-info">
 
+          <div>
 
-);
+            <div className="user-name">
+              {user?.name}
+            </div>
+
+            <div className="user-role">
+              {user?.role}
+            </div>
+
+          </div>
+
+          <UserCircle size={38} />
+
+        </div>
+
+      </div>
+
+    </header>
+
+  );
 
 }
