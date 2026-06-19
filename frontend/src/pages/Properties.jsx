@@ -7,17 +7,13 @@ from "react";
 
 import "../assets/properties.css";
 
-import PropertyStats
-from "../components/properties/PropertyStats.jsx";
+import PropertyStats from "../components/properties/PropertyStats.jsx";
 
-import PropertyFilters
-from "../components/properties/PropertyFilters.jsx";
+import PropertyFilters from "../components/properties/PropertyFilters.jsx";
 
-import PropertyCards
-from "../components/properties/PropertyCards.jsx";
+import PropertyCards from "../components/properties/PropertyCards.jsx";
 
-import PropertyDrawer
-from "../components/properties/PropertyDrawer.jsx";
+import PropertyDrawer from "../components/properties/PropertyDrawer.jsx";
 
 import {
   getProperties,
