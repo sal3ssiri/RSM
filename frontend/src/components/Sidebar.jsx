@@ -1,97 +1,121 @@
 import {
-LayoutDashboard,
-Building2,
-Users,
-FileText,
-Wallet,
-UserCog,
-LogOut
+  LayoutDashboard,
+  Building2,
+  Home,
+  Users,
+  FileText,
+  Wallet,
+  Wrench,
+  UserCog,
+  Settings,
+  LogOut
 }
 from "lucide-react";
 
 import {
-NavLink
+  NavLink
 }
 from "react-router-dom";
 
 export default function Sidebar() {
 
-return (
+  function logout() {
 
+    localStorage.clear();
 
-<aside className="sidebar">
+    window.location.reload();
 
-  <div className="sidebar-logo">
+  }
 
-    RSM
+  return (
 
-  </div>
+    <aside className="sidebar">
 
-  <nav>
+      <div className="sidebar-logo">
 
-    <NavLink
-      to="/"
-    >
-      <LayoutDashboard size={18} />
-      Dashboard
-    </NavLink>
+        <h2>
+          نظام إدارة العقارات
+        </h2>
 
-    <NavLink
-      to="/properties"
-    >
-      <Building2 size={18} />
-      Properties
-    </NavLink>
+      </div>
 
-    <NavLink
-      to="/tenants"
-    >
-      <Users size={18} />
-      Tenants
-    </NavLink>
+      <nav>
 
-    <NavLink
-      to="/contracts"
-    >
-      <FileText size={18} />
-      Contracts
-    </NavLink>
+        <NavLink to="/">
+          <LayoutDashboard size={20} />
+          <span>
+            لوحة التحكم
+          </span>
+        </NavLink>
 
-    <NavLink
-      to="/payments"
-    >
-      <Wallet size={18} />
-      Payments
-    </NavLink>
+        <NavLink to="/properties">
+          <Building2 size={20} />
+          <span>
+            العقارات
+          </span>
+        </NavLink>
 
-    <NavLink
-      to="/users"
-    >
-      <UserCog size={18} />
-      Users
-    </NavLink>
+        <NavLink to="/units">
+          <Home size={20} />
+          <span>
+            الوحدات
+          </span>
+        </NavLink>
 
-  </nav>
+        <NavLink to="/tenants">
+          <Users size={20} />
+          <span>
+            المستأجرون
+          </span>
+        </NavLink>
 
-  <button
-    onClick={() => {
+        <NavLink to="/contracts">
+          <FileText size={20} />
+          <span>
+            العقود
+          </span>
+        </NavLink>
 
-      localStorage.clear();
+        <NavLink to="/payments">
+          <Wallet size={20} />
+          <span>
+            المدفوعات
+          </span>
+        </NavLink>
 
-      window.location.reload();
+        <NavLink to="/maintenance">
+          <Wrench size={20} />
+          <span>
+            الصيانة
+          </span>
+        </NavLink>
 
-    }}
-  >
+        <NavLink to="/users">
+          <UserCog size={20} />
+          <span>
+            المستخدمون
+          </span>
+        </NavLink>
 
-    <LogOut size={18} />
+        <NavLink to="/settings">
+          <Settings size={20} />
+          <span>
+            الإعدادات
+          </span>
+        </NavLink>
 
-    Logout
+      </nav>
 
-  </button>
+      <button
+        className="logout-btn"
+        onClick={logout}
+      >
+        <LogOut size={20} />
+        تسجيل الخروج
+      </button>
 
-</aside>
+    </aside>
 
-
-);
+  );
 
 }
