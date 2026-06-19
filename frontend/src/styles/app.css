@@ -28,9 +28,14 @@ padding: 24px;
 }
 
 .sidebar-logo {
-font-size: 24px;
-font-weight: 700;
-margin-bottom: 32px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding-bottom: 20px;
 }
 
 .sidebar nav {
