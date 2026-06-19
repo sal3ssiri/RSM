@@ -1,8 +1,8 @@
 import {
-BrowserRouter,
-Routes,
-Route,
-Navigate
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate
 }
 from "react-router-dom";
 
@@ -15,6 +15,9 @@ from "./pages/Dashboard.jsx";
 import Properties
 from "./pages/Properties.jsx";
 
+import Units
+from "./pages/Units.jsx";
+
 import Tenants
 from "./pages/Tenants.jsx";
 
@@ -24,94 +27,117 @@ from "./pages/Contracts.jsx";
 import Payments
 from "./pages/Payments.jsx";
 
+import Maintenance
+from "./pages/Maintenance.jsx";
+
 import Users
 from "./pages/Users.jsx";
+
+import Settings
+from "./pages/Settings.jsx";
 
 import MainLayout
 from "./layouts/MainLayout.jsx";
 
 export default function App() {
 
-const user =
-localStorage.getItem(
-"user"
-);
+  const user =
+    localStorage.getItem(
+      "user"
+    );
 
-if (!user) {
+  if (!user) {
 
+    return <Login />;
 
-return <Login />;
+  }
 
+  return (
 
-}
+    <BrowserRouter>
 
-return (
+      <MainLayout>
 
+        <Routes>
 
-<BrowserRouter>
-
-  <MainLayout>
-
-    <Routes>
-
-      <Route
-        path="/"
-        element={
-          <Dashboard />
-        }
-      />
-
-      <Route
-        path="/properties"
-        element={
-          <Properties />
-        }
-      />
-
-      <Route
-        path="/tenants"
-        element={
-          <Tenants />
-        }
-      />
-
-      <Route
-        path="/contracts"
-        element={
-          <Contracts />
-        }
-      />
-
-      <Route
-        path="/payments"
-        element={
-          <Payments />
-        }
-      />
-
-      <Route
-        path="/users"
-        element={
-          <Users />
-        }
-      />
-
-      <Route
-        path="*"
-        element={
-          <Navigate
-            to="/"
+          <Route
+            path="/"
+            element={
+              <Dashboard />
+            }
           />
-        }
-      />
 
-    </Routes>
+          <Route
+            path="/properties"
+            element={
+              <Properties />
+            }
+          />
 
-  </MainLayout>
+          <Route
+            path="/units"
+            element={
+              <Units />
+            }
+          />
 
-</BrowserRouter>
+          <Route
+            path="/tenants"
+            element={
+              <Tenants />
+            }
+          />
 
+          <Route
+            path="/contracts"
+            element={
+              <Contracts />
+            }
+          />
 
-);
+          <Route
+            path="/payments"
+            element={
+              <Payments />
+            }
+          />
+
+          <Route
+            path="/maintenance"
+            element={
+              <Maintenance />
+            }
+          />
+
+          <Route
+            path="/users"
+            element={
+              <Users />
+            }
+          />
+
+          <Route
+            path="/settings"
+            element={
+              <Settings />
+            }
+          />
+
+          <Route
+            path="*"
+            element={
+              <Navigate
+                to="/"
+              />
+            }
+          />
+
+        </Routes>
+
+      </MainLayout>
+
+    </BrowserRouter>
+
+  );
 
 }
