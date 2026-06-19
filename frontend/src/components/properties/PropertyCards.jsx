@@ -113,7 +113,7 @@ export default function PropertyCards(
                 <div className="badges">
 
                   <span
-                    className="badge badge-type"
+                    className="property-badge badge-type"
                   >
 
                     {
@@ -125,8 +125,8 @@ export default function PropertyCards(
                   <span
                     className={
                       isUnits
-                        ? "badge badge-rental units"
-                        : "badge badge-rental"
+                        ? "property-badge badge-rental units"
+                        : "property-badge badge-rental"
                     }
                   >
 
