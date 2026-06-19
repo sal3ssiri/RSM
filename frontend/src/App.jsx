@@ -6,45 +6,21 @@ import {
 }
 from "react-router-dom";
 
-import Login
-from "./pages/Login.jsx";
+import Login from "./pages/Login.jsx";
 
-import Dashboard
-from "./pages/Dashboard.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Properties from "./pages/Properties.jsx";
+import Tenants from "./pages/Tenants.jsx";
+import Contracts from "./pages/Contracts.jsx";
+import Payments from "./pages/Payments.jsx";
+import Users from "./pages/Users.jsx";
 
-import Properties
-from "./pages/Properties.jsx";
-
-import Units
-from "./pages/Units.jsx";
-
-import Tenants
-from "./pages/Tenants.jsx";
-
-import Contracts
-from "./pages/Contracts.jsx";
-
-import Payments
-from "./pages/Payments.jsx";
-
-import Maintenance
-from "./pages/Maintenance.jsx";
-
-import Users
-from "./pages/Users.jsx";
-
-import Settings
-from "./pages/Settings.jsx";
-
-import MainLayout
-from "./layouts/MainLayout.jsx";
+import MainLayout from "./layouts/MainLayout.jsx";
 
 export default function App() {
 
   const user =
-    localStorage.getItem(
-      "user"
-    );
+    localStorage.getItem("user");
 
   if (!user) {
 
@@ -62,74 +38,37 @@ export default function App() {
 
           <Route
             path="/"
-            element={
-              <Dashboard />
-            }
+            element={<Dashboard />}
           />
 
           <Route
             path="/properties"
-            element={
-              <Properties />
-            }
-          />
-
-          <Route
-            path="/units"
-            element={
-              <Units />
-            }
+            element={<Properties />}
           />
 
           <Route
             path="/tenants"
-            element={
-              <Tenants />
-            }
+            element={<Tenants />}
           />
 
           <Route
             path="/contracts"
-            element={
-              <Contracts />
-            }
+            element={<Contracts />}
           />
 
           <Route
             path="/payments"
-            element={
-              <Payments />
-            }
-          />
-
-          <Route
-            path="/maintenance"
-            element={
-              <Maintenance />
-            }
+            element={<Payments />}
           />
 
           <Route
             path="/users"
-            element={
-              <Users />
-            }
-          />
-
-          <Route
-            path="/settings"
-            element={
-              <Settings />
-            }
+            element={<Users />}
           />
 
           <Route
             path="*"
-            element={
-              <Navigate
-                to="/"
-              />
-            }
+            element={<Navigate to="/" />}
           />
 
         </Routes>
