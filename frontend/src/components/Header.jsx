@@ -2,15 +2,20 @@ import {
   Bell,
   Settings,
   LogOut,
-  UserCircle
+  UserCircle,
+  Menu
 }
 from "lucide-react";
 
-export default function Header() {
+export default function Header(
+  { onToggleSidebar }
+) {
 
   const user =
     JSON.parse(
-      localStorage.getItem("user")
+      localStorage.getItem(
+        "user"
+      )
     );
 
   function logout() {
@@ -25,29 +30,36 @@ export default function Header() {
 
     <header className="header">
 
-      <div className="header-actions">
+      <div className="header-left">
 
         <button
-          className="icon-btn"
-          onClick={logout}
+          className="mobile-menu-btn"
+          onClick={onToggleSidebar}
         >
-          <LogOut size={20} />
+          <Menu size={22} />
         </button>
 
-        <button className="icon-btn">
-          <Settings size={20} />
-        </button>
+        <div className="user-info">
 
-        <button
-          className="icon-btn notification-btn"
-        >
-          <Bell size={20} />
+          <UserCircle size={46} />
 
-          <span className="badge">
-            3
-          </span>
+          <div>
 
-        </button>
+            <div className="user-name">
+
+              {user?.name}
+
+            </div>
+
+            <div className="user-role">
+
+              {user?.role}
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -57,21 +69,38 @@ export default function Header() {
 
       </div>
 
-      <div className="user-info">
+      <div className="header-actions">
 
-        <UserCircle size={48} />
+        <button
+          className="icon-btn notification-btn"
+        >
 
-        <div>
+          <Bell size={20} />
 
-          <div className="user-name">
-            {user?.name}
-          </div>
+          <span className="badge">
 
-          <div className="user-role">
-            {user?.role}
-          </div>
+            3
 
-        </div>
+          </span>
+
+        </button>
+
+        <button
+          className="icon-btn"
+        >
+
+          <Settings size={20} />
+
+        </button>
+
+        <button
+          className="icon-btn"
+          onClick={logout}
+        >
+
+          <LogOut size={20} />
+
+        </button>
 
       </div>
 
