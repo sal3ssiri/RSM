@@ -16,6 +16,9 @@ from "../components/properties/PropertyFilters.jsx";
 import PropertyCards
 from "../components/properties/PropertyCards.jsx";
 
+import PropertyDrawer
+from "../components/properties/PropertyDrawer.jsx";
+
 import {
   getProperties,
   getLookupValues
@@ -68,6 +71,11 @@ export default function Properties() {
     status,
     setStatus
   ] = useState("");
+
+  const [
+  drawerOpen,
+  setDrawerOpen
+] = useState(false);
 
   useEffect(() => {
 
@@ -298,12 +306,15 @@ export default function Properties() {
         </div>
 
         <button
-          className="add-property-btn"
-        >
+  className="add-property-btn"
+  onClick={() =>
+    setDrawerOpen(true)
+  }
+>
 
-          + إضافة عقار
+  + إضافة عقار
 
-        </button>
+</button>
 
       </div>
 
@@ -332,6 +343,13 @@ export default function Properties() {
           filteredProperties
         }
       />
+
+      <PropertyDrawer
+  open={drawerOpen}
+  onClose={() =>
+    setDrawerOpen(false)
+  }
+/>
 
     </div>
 
