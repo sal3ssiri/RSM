@@ -80,12 +80,16 @@ export default function Properties() {
     try {
 
       const [
+
         propertiesResult,
+
         propertyTypesResult,
+
         citiesResult,
+
         statusesResult
-      ] =
-      await Promise.all([
+
+      ] = await Promise.all([
 
         getProperties(),
 
@@ -167,28 +171,27 @@ export default function Properties() {
       return properties.filter(
         property => {
 
-          const keyword =
-            [
+          const keyword = [
 
-              property.PropertyID,
+            property.PropertyID,
 
-              property.PropertyName,
+            property.PropertyName,
 
-              property.PropertyType,
+            property.PropertyType,
 
-              property.City,
+            property.City,
 
-              property.District,
+            property.District,
 
-              property.OwnerName,
+            property.OwnerName,
 
-              property.RentalMode,
+            property.RentalMode,
 
-              property.Status
+            property.Status
 
-            ]
-            .join(" ")
-            .toLowerCase();
+          ]
+          .join(" ")
+          .toLowerCase();
 
           return (
 
@@ -222,8 +225,7 @@ export default function Properties() {
             (
               !status ||
 
-              property.Status ===
-              status
+              property.Status === status
             )
 
           );
@@ -249,7 +251,9 @@ export default function Properties() {
 
     return (
 
-      <div>
+      <div
+        className="loading-state"
+      >
 
         جاري تحميل العقارات...
 
@@ -261,7 +265,7 @@ export default function Properties() {
 
   return (
 
-    <div>
+    <div className="properties-page">
 
       <PropertyStats
         properties={
@@ -269,17 +273,47 @@ export default function Properties() {
         }
       />
 
+      <div className="properties-toolbar">
+
+        <div className="toolbar-header">
+
+          <h2>
+
+            العقارات
+
+          </h2>
+
+          <span>
+
+            إجمالي النتائج:
+
+            {" "}
+
+            {
+              filteredProperties.length
+            }
+
+          </span>
+
+        </div>
+
+        <button
+          className="add-property-btn"
+        >
+
+          + إضافة عقار
+
+        </button>
+
+      </div>
+
       <PropertyFilters
 
         search={search}
         setSearch={setSearch}
 
-        propertyType={
-          propertyType
-        }
-        setPropertyType={
-          setPropertyType
-        }
+        propertyType={propertyType}
+        setPropertyType={setPropertyType}
 
         city={city}
         setCity={setCity}
@@ -287,17 +321,9 @@ export default function Properties() {
         status={status}
         setStatus={setStatus}
 
-        propertyTypes={
-          propertyTypes
-        }
-
-        cities={
-          cities
-        }
-
-        statuses={
-          statuses
-        }
+        propertyTypes={propertyTypes}
+        cities={cities}
+        statuses={statuses}
 
       />
 
