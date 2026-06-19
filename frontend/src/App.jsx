@@ -1,8 +1,8 @@
 import Dashboard
-  from "./pages/Dashboard";
+  from "./pages/Dashboard.jsx";
 
 import MainLayout
-  from "./layouts/MainLayout";
+  from "./layouts/MainLayout.jsx";
 
 export default function App() {
 
