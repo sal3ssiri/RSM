@@ -1,4 +1,4 @@
-```jsx
+jsx
 import {
   MapPin,
   User,
@@ -242,4 +242,4 @@ export default function PropertyCards(
   );
 
 }
-```
+
