@@ -1,5 +1,5 @@
 import {
-  API_URL
+  CONFIG
 }
 from "../config";
 
@@ -7,7 +7,7 @@ export async function getProperties() {
 
   const response =
     await fetch(
-      API_URL +
+      CONFIG.API_URL +
       "?action=getProperties"
     );
 
@@ -40,7 +40,7 @@ export async function addProperty(
 
   const response =
     await fetch(
-      API_URL +
+      CONFIG.API_URL +
       "?" +
       params.toString()
     );
@@ -55,7 +55,7 @@ export async function getLookupValues(
 
   const response =
     await fetch(
-      API_URL +
+      CONFIG.API_URL +
       "?action=getLookupValues&category=" +
       encodeURIComponent(
         category
