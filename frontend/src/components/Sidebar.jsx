@@ -1,4 +1,9 @@
 import {
+  NavLink
+}
+from "react-router-dom";
+
+import {
   LayoutDashboard,
   Building2,
   Home,
@@ -12,21 +17,83 @@ import {
 }
 from "lucide-react";
 
-import {
-  NavLink
-}
-from "react-router-dom";
+export default function Sidebar(
+  {
+    isOpen,
+    onClose
+  }
+) {
 
-export default function Sidebar() {
+  const menuItems = [
+
+    {
+      path: "/",
+      label: "لوحة التحكم",
+      icon: LayoutDashboard
+    },
+
+    {
+      path: "/properties",
+      label: "العقارات",
+      icon: Building2
+    },
+
+    {
+      path: "/units",
+      label: "الوحدات",
+      icon: Home
+    },
+
+    {
+      path: "/tenants",
+      label: "المستأجرون",
+      icon: Users
+    },
+
+    {
+      path: "/contracts",
+      label: "العقود",
+      icon: FileText
+    },
+
+    {
+      path: "/payments",
+      label: "المدفوعات",
+      icon: Wallet
+    },
+
+    {
+      path: "/maintenance",
+      label: "الصيانة",
+      icon: Wrench
+    },
+
+    {
+      path: "/users",
+      label: "المستخدمون",
+      icon: UserCog
+    },
+
+    {
+      path: "/settings",
+      label: "الإعدادات",
+      icon: Settings
+    }
+
+  ];
 
   return (
 
-    <aside className="sidebar">
+    <aside
+      className={`sidebar ${
+        isOpen ? "open" : ""
+      }`}
+    >
 
       <div className="sidebar-logo">
 
         <Building
-          size={56}
+          size={60}
           strokeWidth={1.8}
         />
 
@@ -34,95 +101,38 @@ export default function Sidebar() {
 
       <nav className="sidebar-menu">
 
-        <NavLink to="/">
+        {
 
-          <LayoutDashboard size={20} />
+          menuItems.map(
+            (item) => {
 
-          <span>
-            لوحة التحكم
-          </span>
+              const Icon =
+                item.icon;
 
-        </NavLink>
+              return (
 
-        <NavLink to="/properties">
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  onClick={onClose}
+                >
 
-          <Building2 size={20} />
+                  <span>
 
-          <span>
-            العقارات
-          </span>
+                    {item.label}
 
-        </NavLink>
+                  </span>
 
-        <NavLink to="/units">
+                  <Icon size={20} />
 
-          <Home size={20} />
+                </NavLink>
 
-          <span>
-            الوحدات
-          </span>
+              );
 
-        </NavLink>
+            }
+          )
 
-        <NavLink to="/tenants">
-
-          <Users size={20} />
-
-          <span>
-            المستأجرون
-          </span>
-
-        </NavLink>
-
-        <NavLink to="/contracts">
-
-          <FileText size={20} />
-
-          <span>
-            العقود
-          </span>
-
-        </NavLink>
-
-        <NavLink to="/payments">
-
-          <Wallet size={20} />
-
-          <span>
-            المدفوعات
-          </span>
-
-        </NavLink>
-
-        <NavLink to="/maintenance">
-
-          <Wrench size={20} />
-
-          <span>
-            الصيانة
-          </span>
-
-        </NavLink>
-
-        <NavLink to="/users">
-
-          <UserCog size={20} />
-
-          <span>
-            المستخدمون
-          </span>
-
-        </NavLink>
-
-        <NavLink to="/settings">
-
-          <Settings size={20} />
-
-          <span>
-            الإعدادات
-          </span>
-
-        </NavLink>
+        }
 
       </nav>
 
