@@ -129,14 +129,14 @@ font-size: 14px;
 margin-bottom: 14px;
 }
 
-.badges {
+.property-badge {
 display: flex;
 gap: 8px;
 flex-wrap: wrap;
 margin-bottom: 16px;
 }
 
-.badge {
+.property-badge {
 padding: 6px 10px;
 border-radius: 10px;
 font-size: 12px;
