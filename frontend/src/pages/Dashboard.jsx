@@ -5,7 +5,7 @@ import {
   FileText
 } from "lucide-react";
 
-import "./assets/dashboard.css";
+import "../assets/dashboard.css";
 
 export default function Dashboard() {
 
