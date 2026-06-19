@@ -1,8 +1,8 @@
 import Header
-  from "../components/Header";
+  from "../components/Header.jsx";
 
 import Sidebar
-  from "../components/Sidebar";
+  from "../components/Sidebar.jsx";
 
 export default function MainLayout(
   { children }
