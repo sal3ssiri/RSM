@@ -1,8 +1,7 @@
 import {
   Bell,
   UserCircle
-}
-from "lucide-react";
+} from "lucide-react";
 
 export default function Header() {
 
@@ -17,25 +16,29 @@ export default function Header() {
 
     <header className="header">
 
-      <div className="header-right">
+      <div className="header-title">
 
-        <h1>
-          نظام إدارة العقارات
-        </h1>
+        نظام إدارة العقارات
 
       </div>
 
-      <div className="header-left">
+      <div className="header-actions">
 
         <button
           className="notification-btn"
         >
+
           <Bell size={22} />
+
+          <span className="notification-badge">
+            3
+          </span>
+
         </button>
 
         <div className="user-info">
 
-          <div>
+          <div className="user-details">
 
             <div className="user-name">
               {user?.name}
@@ -47,7 +50,10 @@ export default function Header() {
 
           </div>
 
-          <UserCircle size={38} />
+          <UserCircle
+            size={42}
+            strokeWidth={1.7}
+          />
 
         </div>
 
