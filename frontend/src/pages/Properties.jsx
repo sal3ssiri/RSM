@@ -348,12 +348,13 @@ export default function Properties() {
   cities={cities}
   statuses={statuses}
   onSaved={loadPage}
+        
 />
-
-    </div>
 console.log("propertyTypes", propertyTypes);
 console.log("cities", cities);
 console.log("statuses", statuses);
+    </div>
+
   );
 
 }
