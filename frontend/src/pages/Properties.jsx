@@ -303,13 +303,12 @@ export default function Properties() {
 
         <button
   className="add-property-btn"
-  onClick={() =>
-    setDrawerOpen(true)
-  }
+  onClick={() => {
+    console.log("OPEN DRAWER");
+    setDrawerOpen(true);
+  }}
 >
-
   + إضافة عقار
-
 </button>
 
       </div>
