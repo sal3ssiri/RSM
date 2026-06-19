@@ -2,7 +2,10 @@ import "../../assets/property-drawer.css";
 
 export default function PropertyDrawer({
   open,
-  onClose
+  onClose,
+  propertyTypes = [],
+  cities = [],
+  statuses = []
 }) {
 
   if (!open) {
@@ -10,9 +13,7 @@ export default function PropertyDrawer({
   }
 
   return (
-
     <>
-    
       <div
         className="drawer-overlay"
         onClick={onClose}
@@ -23,18 +24,14 @@ export default function PropertyDrawer({
         <div className="drawer-header">
 
           <h2>
-
             إضافة عقار
-
           </h2>
 
           <button
             className="drawer-close"
             onClick={onClose}
           >
-
             ×
-
           </button>
 
         </div>
@@ -44,9 +41,7 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               اسم العقار
-
             </label>
 
             <input
@@ -59,17 +54,24 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               نوع العقار
-
             </label>
 
             <select>
 
-              <option>
+              <option value="">
                 اختر النوع
               </option>
 
+              {propertyTypes.map(item => (
+                <option
+                  key={item}
+                  value={item}
+                >
+                  {item}
+                </option>
+              ))}
+
             </select>
 
           </div>
@@ -77,16 +79,23 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               المدينة
-
             </label>
 
             <select>
 
-              <option>
+              <option value="">
                 اختر المدينة
               </option>
+
+              {cities.map(item => (
+                <option
+                  key={item}
+                  value={item}
+                >
+                  {item}
+                </option>
+              ))}
 
             </select>
 
@@ -95,9 +104,7 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               الحي
-
             </label>
 
             <input
@@ -110,9 +117,7 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               المالك
-
             </label>
 
             <input
@@ -125,20 +130,23 @@ export default function PropertyDrawer({
           <div className="form-group">
 
             <label>
-
               حالة العقار
-
             </label>
 
             <select>
 
-              <option>
-                نشط
+              <option value="">
+                اختر الحالة
               </option>
 
-              <option>
-                غير نشط
-              </option>
+              {statuses.map(item => (
+                <option
+                  key={item}
+                  value={item}
+                >
+                  {item}
+                </option>
+              ))}
 
             </select>
 
@@ -152,17 +160,13 @@ export default function PropertyDrawer({
             className="btn-secondary"
             onClick={onClose}
           >
-
             إلغاء
-
           </button>
 
           <button
             className="btn-primary"
           >
-
             حفظ
-
           </button>
 
         </div>
@@ -170,7 +174,6 @@ export default function PropertyDrawer({
       </div>
 
     </>
-
   );
 
 }
