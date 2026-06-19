@@ -5,27 +5,51 @@ export function initializeGoogleLogin(
   callback
 ) {
 
+  if (
+    !window.google ||
+    !window.google.accounts ||
+    !window.google.accounts.id
+  ) {
+
+    setTimeout(() => {
+
+      initializeGoogleLogin(
+        callback
+      );
+
+    }, 300);
+
+    return;
+
+  }
+
+  const buttonElement =
+    document.getElementById(
+      "googleSignIn"
+    );
+
+  if (!buttonElement) {
+    return;
+  }
+
   window.google.accounts.id.initialize({
 
     client_id:
       GOOGLE_CLIENT_ID,
 
-    callback
+    callback: callback
 
   });
 
   window.google.accounts.id.renderButton(
 
-    document.getElementById(
-      "googleSignIn"
-    ),
+    buttonElement,
 
     {
-
       theme: "outline",
-
-      size: "large"
-
+      size: "large",
+      text: "signin_with",
+      shape: "rectangular"
     }
 
   );
